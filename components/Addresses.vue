@@ -2,21 +2,28 @@
     <div>
         <h2 class="text-2xl font-bold mb-4">Addresses</h2>
 
-        <div v-if="addresses.length > 0">
-            <ul>
-                <li v-for="(address, index) in addresses" :key="index" class="mb-4">
-                    <h3 class="text-lg font-bold">{{ address.name }}</h3>
-                    <p class="text-gray-500">{{ address.balance }}</p>
-                </li>
-            </ul>
+        <div v-if="addresses && addresses.length > 0">
+            <table class="w-full">
+                <thead>
+                    <tr>
+                        <th class="py-2">Name</th>
+                        <th class="py-2">Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(address, index) in addresses" :key="index" class="border-b">
+                        <td class="py-2">{{ address.name }}</td>
+                        <td class="py-2">{{ address.balance }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div v-else>
             <p>No addresses found.</p>
         </div>
     </div>
-</template>
-  
+</template>  
 <script>
 import api from '@/api';
 
