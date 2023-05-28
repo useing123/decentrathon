@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar /> <!-- Добавьте компонент Navbar здесь -->
     <div class="flex flex-wrap justify-center">
       <div v-for="link in links" :key="link.to" class="m-4">
         <nuxt-link :to="link.to" class="text-blue-500 hover:underline">{{ link.text }}</nuxt-link>
@@ -11,7 +12,12 @@
 </template>
 
 <script>
+import Navbar from '@/components/Navbar.vue'; // Импортируйте компонент Navbar
+
 export default {
+  components: {
+    Navbar, // Добавьте компонент Navbar в список компонентов
+  },
   data() {
     return {
       links: [
