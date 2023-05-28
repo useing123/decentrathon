@@ -30,10 +30,10 @@
     methods: {
       async fetchMinerPools() {
         try {
-          const response = await api.get('/stats/pool', {
+          const response = await api.get('/pools', {
             params: {
               module: 'stats',
-              action: 'pool',
+              action: 'getPools',
             },
           });
           this.minerPools = response.data.result;

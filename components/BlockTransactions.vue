@@ -8,7 +8,7 @@
         <h3 class="text-lg font-semibold mb-2">Latest Blocks</h3>
         <ul>
           <li v-for="block in blocks" :key="block.id">
-            Block ID: {{ block.id }} | Timestamp: {{ block.timestamp }}
+            Block ID: {{ block.number }} | Timestamp: {{ block.timestamp }}
           </li>
         </ul>
       </div>
@@ -16,8 +16,8 @@
       <div v-if="transactions.length > 0">
         <h3 class="text-lg font-semibold mb-2">Latest Transactions</h3>
         <ul>
-          <li v-for="transaction in transactions" :key="transaction.id">
-            Transaction ID: {{ transaction.id }} | Amount: {{ transaction.amount }}
+          <li v-for="transaction in transactions" :key="transaction.hash">
+            Transaction ID: {{ transaction.hash }} | Amount: {{ transaction.value }}
           </li>
         </ul>
       </div>
@@ -45,23 +45,22 @@
     methods: {
       async fetchBlockTransactions() {
         try {
-          const response = await api.get('/block', {
+          const response = await api.get('/block/latest', {
             params: {
-              module: 'proxy',
-              action: 'eth_blockNumber',
+              module: 'block',
+              action: 'getblockcount',
             },
           });
-          const latestBlockNumber = parseInt(response.data.result, 16);
+          const latestBlockNumber = response.data.result;
           const startBlockNumber = latestBlockNumber - 10;
           const blockPromises = [];
           for (let i = startBlockNumber; i <= latestBlockNumber; i++) {
             blockPromises.push(
-              api.get('/block', {
+              api.get('/block/details', {
                 params: {
-                  module: 'proxy',
-                  action: 'eth_getBlockByNumber',
-                  tag: `0x${i.toString(16)}`,
-                  boolean: 'true',
+                  module: 'block',
+                  action: 'getblock',
+                  height: i,
                 },
               })
             );
@@ -70,13 +69,13 @@
           this.blocks = blockResponses.map((response) => response.data.result);
           const transactionPromises = [];
           for (const block of this.blocks) {
-            for (const txHash of block.transactions) {
+            for (const tx of block.tx) {
               transactionPromises.push(
-                api.get('/transaction', {
+                api.get('/transaction/details', {
                   params: {
-                    module: 'proxy',
-                    action: 'eth_getTransactionByHash',
-                    txhash: txHash,
+                    module: 'transaction',
+                    action: 'gettxinfo',
+                    txhash: tx,
                   },
                 })
               );

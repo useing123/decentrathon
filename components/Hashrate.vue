@@ -28,13 +28,13 @@
     methods: {
       async fetchHashrate() {
         try {
-          const response = await api.get('/miner/miningStatistics', {
+          const response = await api.get('/stats', {
             params: {
-              module: 'stats',
-              action: 'getminingstatistics',
+              module: 'miner',
+              action: 'eth_getHashrate',
             },
           });
-          this.hashrate = response.data.result[0].hashRate;
+          this.hashrate = response.data.result;
         } catch (error) {
           console.error(error);
         }

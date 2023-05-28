@@ -5,6 +5,9 @@
           <div v-for="link in links" :key="link.to" class="m-4">
             <nuxt-link :to="link.to" class="text-blue-500 hover:underline">{{ link.text }}</nuxt-link>
           </div>
+          <div class="m-4">
+            <nuxt-link to="/" class="text-blue-500 hover:underline">Return to Main</nuxt-link>
+          </div>
         </div>
       </nav>
   
@@ -31,6 +34,6 @@
   </script>
   
   <style>
-  /* Добавьте здесь необходимые стили Tailwind CSS, если требуется */
+  /* Add any necessary Tailwind CSS styles if required */
   </style>
   

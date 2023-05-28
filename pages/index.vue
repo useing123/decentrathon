@@ -1,6 +1,8 @@
 <template>
   <div>
-    <Navbar /> <!-- Добавьте компонент Navbar здесь -->
+    <Navbar /> <!-- Add the Navbar component here -->
+    <h1 class="text-3xl font-bold text-center my-8">Добро пожаловать в мониторинг BNB Greenfield Storage Providers!</h1>
+    <p class="text-lg text-center mb-4">Выберите одну из следующих опций:</p>
     <div class="flex flex-wrap justify-center">
       <div v-for="link in links" :key="link.to" class="m-4">
         <nuxt-link :to="link.to" class="text-blue-500 hover:underline">{{ link.text }}</nuxt-link>
@@ -12,11 +14,11 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'; // Импортируйте компонент Navbar
+import Navbar from '@/components/Navbar.vue'; // Import the Navbar component
 
 export default {
   components: {
-    Navbar, // Добавьте компонент Navbar в список компонентов
+    Navbar, // Add the Navbar component to the component list
   },
   data() {
     return {
@@ -35,5 +37,5 @@ export default {
 </script>
 
 <style>
-/* Добавьте здесь необходимые стили Tailwind CSS, если требуется */
+/* Add any additional Tailwind CSS styles if required */
 </style>

@@ -14,8 +14,8 @@
           </thead>
           <tbody>
             <tr v-for="(fee, index) in averageFees" :key="index" class="border-b">
-              <td class="py-2">{{ fee.type }}</td>
-              <td class="py-2">{{ formatAmount(fee.amount) }}</td>
+              <td class="py-2">{{ fee.fast }}</td>
+              <td class="py-2">{{ formatAmount(fee.avg) }}</td>
             </tr>
           </tbody>
         </table>
@@ -43,7 +43,7 @@
     methods: {
       async fetchAverageFees() {
         try {
-          const response = await api.get('/gastracker', {
+          const response = await api.get('/api', {
             params: {
               module: 'gastracker',
               action: 'gasoracle',

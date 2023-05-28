@@ -30,10 +30,10 @@
     methods: {
       async fetchNetworkNodes() {
         try {
-          const response = await api.get('/stats/nodestatus', {
+          const response = await api.get('/network/nodes', {
             params: {
               module: 'stats',
-              action: 'nodestatus',
+              action: 'getNodes',
             },
           });
           this.networkNodes = response.data.result;

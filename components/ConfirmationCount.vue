@@ -31,11 +31,13 @@
           const response = await api.get('/transactions', {
             params: {
               module: 'account',
-              action: 'txlist',
-              confirmations: 10,
+              action: 'gettxcount',
+              address: 'YOUR_ADDRESS_HERE',
+              sort: 'desc',
+              apikey: 'YOUR_API_KEY_HERE',
             },
           });
-          this.confirmationCount = response.data.result.length;
+          this.confirmationCount = response.data.result;
         } catch (error) {
           console.error(error);
         }
