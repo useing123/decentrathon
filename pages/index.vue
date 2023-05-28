@@ -1,12 +1,10 @@
 <template>
   <div>
-    <nuxt-link to="/block-transactions">Block Transactions</nuxt-link>
-    <nuxt-link to="/hashrate">Hashrate</nuxt-link>
-    <nuxt-link to="/miner-pools">Miner Pools</nuxt-link>
-    <nuxt-link to="/confirmation-count">Confirmation Count</nuxt-link>
-    <nuxt-link to="/average-fees">Average Fees</nuxt-link>
-    <nuxt-link to="/addresses">Addresses</nuxt-link>
-    <nuxt-link to="/network-nodes">Network Nodes</nuxt-link>
+    <div class="flex flex-wrap justify-center">
+      <div v-for="link in links" :key="link.to" class="m-4">
+        <nuxt-link :to="link.to" class="text-blue-500 hover:underline">{{ link.text }}</nuxt-link>
+      </div>
+    </div>
 
     <nuxt-child />
   </div>
@@ -14,6 +12,22 @@
 
 <script>
 export default {
-  // ...
-}
+  data() {
+    return {
+      links: [
+        { to: '/block-transactions', text: 'Block Transactions' },
+        { to: '/hashrate', text: 'Hashrate' },
+        { to: '/miner-pools', text: 'Miner Pools' },
+        { to: '/confirmation-count', text: 'Confirmation Count' },
+        { to: '/average-fees', text: 'Average Fees' },
+        { to: '/addresses', text: 'Addresses' },
+        { to: '/network-nodes', text: 'Network Nodes' },
+      ],
+    };
+  },
+};
 </script>
+
+<style>
+/* Добавьте здесь необходимые стили Tailwind CSS, если требуется */
+</style>

@@ -1,7 +1,12 @@
 <template>
     <div>
-      <h2>Confirmation Count</h2>
-      <!-- Здесь будет отображаться информация о количестве подтверждений -->
+      <h2 class="text-2xl font-bold mb-4">Confirmation Count</h2>
+      <p v-if="confirmationCount > 0" class="text-lg">
+        Количество подтверждений: {{ confirmationCount }}
+      </p>
+      <p v-else class="text-lg">
+        Нет доступных данных о количестве подтверждений.
+      </p>
     </div>
   </template>
   
@@ -29,4 +34,15 @@
     },
   };
   </script>
+  
+  <style>
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+  </style>
   
