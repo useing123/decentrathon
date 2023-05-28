@@ -1,69 +1,79 @@
-# app1
+# Decentrathon
 
-## Build Setup
+Decentrathon is a cryptocurrency monitoring tool that allows users to track various parameters of the Binance Smart Chain (BSC) network. It provides real-time information on blocks, transactions, hashrate, miner pool size, number of confirmations, average fees, addresses and balances, and network nodes.
 
-```bash
-# install dependencies
-$ npm install
+## Features
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+- **Block and Transaction Monitoring**: Users can monitor new blocks and transactions on the BSC network, providing updates on network events and activity.
+- **Hashrate Tracking**: Decentrathon displays the total processing power used to mine the BSC network, helping users evaluate network security and efficiency.
+- **Miner Pool Size**: Users can track the size of miner pools on the BSC network, providing insights into the distribution of mining power.
+- **Number of Confirmations**: Decentrathon tracks the number of confirmations for transactions, helping users determine transaction speed on the network.
+- **Average Fees**: Users can monitor the average transaction fees on the BSC network, allowing them to optimize transaction costs.
+- **Addresses and Balances**: Decentrathon tracks user addresses and balances on the BSC network, providing insights into asset allocation and activity.
+- **Network Nodes**: Users can monitor the number and distribution of network nodes on the BSC network, helping them assess network decentralization and resilience.
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## Installation
 
-# generate static project
-$ npm run generate
+1. Clone the Decentrathon repository from GitHub:
+```
+git clone https://github.com/useing123/decentrathon.git
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+2. Navigate to the project directory:
+```
+cd decentrathon
+```
 
-## Special Directories
+3. Install the project dependencies:
+```
+npm install
+```
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+## Usage
 
-### `assets`
+1. Start the development server:
+```
+npm run dev
+```
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+2. Open your browser and access `http://localhost:3000` to view the Decentrathon application.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+3. Explore the various monitoring features provided by Decentrathon to track different parameters of the BSC network.
 
-### `components`
+## Configuration
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+Decentrathon uses the following configuration files:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+- **`nuxt.config.js`**: This file contains the configuration settings for the Nuxt.js framework used in the project. It includes settings for plugins, modules, build options, and more.
 
-### `layouts`
+## Contributing
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+Contributions to Decentrathon are welcome! If you would like to contribute to the project, please follow these steps:
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+1. Fork the Decentrathon repository on GitHub.
 
+2. Create a new branch for your feature or bug fix:
+```
+git checkout -b feature-name
+```
 
-### `pages`
+3. Make your changes and commit them with descriptive commit messages.
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+4. Push your changes to your forked repository.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+5. Open a pull request on the Decentrathon repository, describing your changes and the motivation behind them.
 
-### `plugins`
+## License
 
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+Decentrathon is licensed under the MIT License. See the [LICENSE](https://github.com/useing123/decentrathon/blob/main/LICENSE) file for more details.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+## Acknowledgements
 
-### `static`
+Decentrathon acknowledges the following resources for their contributions and inspiration:
 
-This directory contains your static files. Each file inside this directory is mapped to `/`.
+- [Greenfield Scan](https://www.greenfieldscan.com)
+- [BSC Trace](https://bsctrace.com)
 
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
+## Contact
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+If you have any questions or feedback regarding Decentrathon, you can reach us at [email protected]
