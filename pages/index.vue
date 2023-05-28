@@ -25,7 +25,7 @@ export default {
       links: [
         { to: '/block-transactions', text: 'Block Transactions' },
         { to: '/hashrate', text: 'Hashrate' },
-        { to: '/miner-pools', text: 'Miner Pools' },
+        { to: '/miner-pools', text: 'Transaction List' },
         { to: '/confirmation-count', text: 'Confirmation Count' },
         { to: '/average-fees', text: 'Average Fees' },
         { to: '/addresses', text: 'Addresses' },
