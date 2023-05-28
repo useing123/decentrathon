@@ -21,8 +21,13 @@ export default {
     methods: {
         async fetchHashrate() {
             try {
-                const response = await api.get('/hashrate');
-                this.hashrate = response.data.hashrate;
+                const response = await api.get('/miner/miningStatistics', {
+                    params: {
+                        module: 'stats',
+                        action: 'getminingstatistics',
+                    },
+                });
+                this.hashrate = response.data.result[0].hashRate;
             } catch (error) {
                 console.error(error);
             }

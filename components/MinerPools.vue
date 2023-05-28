@@ -23,8 +23,13 @@ export default {
     methods: {
         async fetchMinerPools() {
             try {
-                const response = await api.get('/miner-pools');
-                this.minerPools = response.data.minerPools;
+                const response = await api.get('/stats/pool', {
+                    params: {
+                        module: 'stats',
+                        action: 'pool',
+                    },
+                });
+                this.minerPools = response.data.result;
             } catch (error) {
                 console.error(error);
             }

@@ -23,8 +23,13 @@ export default {
     methods: {
         async fetchNetworkNodes() {
             try {
-                const response = await api.get('/network-nodes');
-                this.networkNodes = response.data.networkNodes;
+                const response = await api.get('/stats/nodestatus', {
+                    params: {
+                        module: 'stats',
+                        action: 'nodestatus',
+                    },
+                });
+                this.networkNodes = response.data.result;
             } catch (error) {
                 console.error(error);
             }
